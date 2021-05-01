@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 
+import '@/styles/globals.css'
+
 const MyApp = (props: AppProps): JSX.Element => {
   const { Component, pageProps } = props
   return (
