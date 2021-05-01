@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const Home = (): JSX.Element => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>todo app</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
