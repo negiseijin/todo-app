@@ -3,8 +3,12 @@ import { AppProps } from 'next/app'
 
 import '@/styles/globals.css'
 
+import { useAuthCtx, AuthProvider } from '@/lib/authContext'
+
 const MyApp = (props: AppProps): JSX.Element => {
   const { Component, pageProps } = props
+  const auth = useAuthCtx()
+
   return (
     <>
       <Head>
@@ -14,7 +18,9 @@ const MyApp = (props: AppProps): JSX.Element => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <Component {...pageProps} />
+      <AuthProvider value={auth}>
+        <Component {...pageProps} />
+      </AuthProvider>
     </>
   )
 }

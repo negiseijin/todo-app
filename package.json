@@ -29,9 +29,11 @@
   "dependencies": {
     "@headlessui/react": "^1.1.1",
     "@heroicons/react": "^1.0.1",
+    "firebase": "^8.4.3",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^7.3.6"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
