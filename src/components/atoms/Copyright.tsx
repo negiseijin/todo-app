@@ -1,10 +1,15 @@
 import React from 'react'
 
-export const Copyright: React.VFC = React.memo(() => {
+type Props = {
+  children: React.ReactNode
+}
+
+export const Copyright: React.VFC<Props> = React.memo(({ children }) => {
   return (
     <p className="text-center">
       {'Copyright © '}
-      Satoru Takahashi{new Date().getFullYear()}
+      {children}
+      {new Date().getFullYear()}
       {'.'}
     </p>
   )

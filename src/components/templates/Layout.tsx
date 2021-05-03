@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { useAuth } from '@/lib/authContext'
 import { Header } from '@/components/organisms/Header'
@@ -9,14 +10,20 @@ type Props = {
   children: React.ReactNode
 }
 
-export const Layout: React.VFC<Props> = React.memo((props) => {
+export const Layout: React.VFC<Props> = React.memo(({ children }) => {
   const { currentUser, signOut } = useAuth()
+  const router = useRouter()
+
+  const logOut = async () => {
+    await signOut()
+    router.push('/')
+  }
+
   return (
     <>
       <div className="container mx-auto max-w-7xl flex flex-col h-screen">
-        <pre>{JSON.stringify(currentUser)}</pre>
-        <Header currentUser={currentUser} signOut={signOut} />
-        <Main>{props.children}</Main>
+        <Header currentUser={currentUser} logOut={logOut} />
+        <Main>{children}</Main>
         <Footer />
       </div>
     </>

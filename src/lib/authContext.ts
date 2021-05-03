@@ -1,13 +1,11 @@
-/* eslint-disable no-console */
 import firebase from 'firebase/app'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { auth } from '@/lib/firebase'
 
-type User = firebase.User
+export type User = firebase.User | null
 
 type AuthContextProps = {
-  currentUser: User | null
-  isLoggedin: boolean
+  currentUser: User
   signIn: (
     email: string,
     password: string
@@ -34,8 +32,7 @@ function createCtx<ContextType>() {
 export const [useAuth, AuthProvider] = createCtx<AuthContextProps>()
 
 export const useAuthCtx = (): AuthContextProps => {
-  const [currentUser, setCurrentUser] = useState<User | null>(null)
-  const isLoggedin = currentUser !== null
+  const [currentUser, setCurrentUser] = useState<User>(null)
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -45,19 +42,17 @@ export const useAuthCtx = (): AuthContextProps => {
 
   const signIn = async (email: string, password: string) => {
     try {
-      console.log('signIn')
       return await auth.signInWithEmailAndPassword(email, password)
     } catch (error) {
-      console.log(error, error.code, error.message)
+      console.error(error, error.code, error.message)
     }
   }
 
   const signInAnonymously = async (): Promise<firebase.auth.UserCredential> => {
     try {
-      console.log('signInAnonymously')
       return await firebase.auth().signInAnonymously()
     } catch (error) {
-      console.log(error, error.code, error.message)
+      console.error(error, error.code, error.message)
     }
   }
 
@@ -79,17 +74,16 @@ export const useAuthCtx = (): AuthContextProps => {
           console.error(err)
         })
     } catch (error) {
-      console.log(error, error.code, error.message)
+      console.error(error, error.code, error.message)
     }
   }
   const signOut = async () => {
     try {
       await auth.signOut()
-      console.log('signOut')
     } catch (error) {
-      console.log(error, error.code, error.message)
+      console.error(error, error.code, error.message)
     }
   }
 
-  return { currentUser, isLoggedin, signIn, signInAnonymously, signUp, signOut }
+  return { currentUser, signIn, signInAnonymously, signUp, signOut }
 }
