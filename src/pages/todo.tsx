@@ -20,14 +20,6 @@ const createTodo = async (uid: string, todo: string) => {
     .catch((error) => console.error(error))
 }
 
-const deleteTodo = async (id: string) => {
-  await firestore
-    .collection('todos')
-    .doc(id)
-    .delete()
-    .catch((error) => console.error(error))
-}
-
 const updateTodo = async (todo: type) => {
   await firestore
     .collection('todos')
@@ -38,6 +30,14 @@ const updateTodo = async (todo: type) => {
       date_at: new Date(),
       uid: todo.uid,
     })
+    .catch((error) => console.error(error))
+}
+
+const deleteTodo = async (id: string) => {
+  await firestore
+    .collection('todos')
+    .doc(id)
+    .delete()
     .catch((error) => console.error(error))
 }
 

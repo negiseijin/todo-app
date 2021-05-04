@@ -1,9 +1,13 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
+import { useAuth } from '@/lib/authContext'
 import { Layout } from '@/components/templates/Layout'
 
 export const Home: NextPage = () => {
+  const { currentUser } = useAuth()
+
   return (
     <div className="container">
       <Head>
@@ -83,16 +87,12 @@ export const Home: NextPage = () => {
                   </div>
 
                   <div className="pt-6 text-base leading-6 sm:text-lg sm:leading-7">
-                    <p>todoしてみる?</p>
-                    <p>
-                      <a
-                        href="/auth"
-                        className="text-light-blue-600 hover:text-light-blue-700"
-                      >
+                    <Link href={currentUser ? '/todo' : '/auth'}>
+                      <a className="text-light-blue-600 hover:text-light-blue-700">
                         {' '}
-                        &rarr; ログイン
+                        &rarr; todoしてみる?
                       </a>
-                    </p>
+                    </Link>
                   </div>
                 </div>
               </div>

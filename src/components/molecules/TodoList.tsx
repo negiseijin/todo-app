@@ -28,8 +28,6 @@ export const TodoList: React.VFC<Props> = React.memo(
             uid: doc.data().uid,
           }))
           setTodos(data)
-          // eslint-disable-next-line no-console
-          console.log(data)
         })
     }, [])
 

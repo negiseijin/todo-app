@@ -17,17 +17,17 @@
 
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-	"dbaeumer.vscode-eslint",
-	"donjayamanne.githistory",
-	"eamodio.gitlens",
-	"christian-kohler.path-intellisense",
-	"esbenp.prettier-vscode",
-	"visualstudioexptteam.vscodeintellicode",
-	"dsznajder.es7-react-js-snippets",
-	"xabikos.javascriptsnippets",
-	"bradlc.vscode-tailwindcss",
-	"stylelint.vscode-stylelint"
-],
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    "dsznajder.es7-react-js-snippets",
+    "xabikos.javascriptsnippets",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint"
+  ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
