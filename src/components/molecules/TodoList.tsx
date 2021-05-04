@@ -7,12 +7,12 @@ import { TodoItem } from './TodoItem'
 
 type Props = {
   uid: string
-  editTodo: (todo: Todo) => Promise<unknown>
-  deleteTodo: (id: string) => Promise<unknown>
+  updateTodo: (todo: Todo) => Promise<void>
+  deleteTodo: (id: string) => Promise<void>
 }
 
 export const TodoList: React.VFC<Props> = React.memo(
-  ({ uid, editTodo, deleteTodo }) => {
+  ({ uid, updateTodo, deleteTodo }) => {
     const [todos, setTodos] = useState<Todo[]>([])
 
     useEffect(() => {
@@ -28,6 +28,8 @@ export const TodoList: React.VFC<Props> = React.memo(
             uid: doc.data().uid,
           }))
           setTodos(data)
+          // eslint-disable-next-line no-console
+          console.log(data)
         })
     }, [])
 
@@ -84,7 +86,7 @@ export const TodoList: React.VFC<Props> = React.memo(
                         <TodoItem
                           key={index}
                           todo={todo}
-                          handleEdit={editTodo}
+                          handleUpdate={updateTodo}
                           handleDelete={deleteTodo}
                         />
                       ))}

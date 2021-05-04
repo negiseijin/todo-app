@@ -3,14 +3,14 @@ import { useForm } from 'react-hook-form'
 
 type Props = {
   uid: string
-  onSubmit: (uid: string, todo: string) => Promise<unknown>
+  createTodo: (uid: string, todo: string) => Promise<void>
 }
 
 type IFormInput = {
   todo: string
 }
 
-export const TodoInput: React.VFC<Props> = React.memo(({ uid, onSubmit }) => {
+export const TodoInput: React.VFC<Props> = React.memo(({ uid, createTodo }) => {
   const {
     register,
     handleSubmit,
@@ -26,7 +26,7 @@ export const TodoInput: React.VFC<Props> = React.memo(({ uid, onSubmit }) => {
     async (data: IFormInput, e: FormEvent) => {
       try {
         e.preventDefault()
-        await onSubmit(uid, data.todo)
+        await createTodo(uid, data.todo)
         reset()
       } catch (error) {
         console.error(error)
@@ -48,10 +48,12 @@ export const TodoInput: React.VFC<Props> = React.memo(({ uid, onSubmit }) => {
             {...register('todo', {
               required: true,
             })}
-            className="px-3 py-4 placeholder-blueGray-300 text-blueGray-600 bg-white bg-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-4 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
           />
           {errors?.todo?.type === 'required' && (
-            <p className="text-red text-xs italic">todoを入力してください</p>
+            <p className="text-red-600 text-xs italic">
+              todoを入力してください
+            </p>
           )}
         </div>
         <div className="w-full py-4 lg:w-1/5 lg:px-4">

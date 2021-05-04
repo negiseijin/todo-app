@@ -22,7 +22,7 @@ export const Layout: React.VFC<Props> = React.memo(({ children }) => {
   return (
     <>
       <div className="container mx-auto max-w-7xl flex flex-col h-screen">
-        <Header currentUser={currentUser} logOut={logOut} />
+        {currentUser && <Header currentUser={currentUser} logOut={logOut} />}
         <Main>{children}</Main>
         <Footer />
       </div>
