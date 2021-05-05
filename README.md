@@ -1,5 +1,7 @@
 # todo-app
 
+![todo-app](public/screencapture1.jpg 'todo-app')
+
 Bootstrap a developer-friendly NextJS app configured with:
 
 - [Typescript](https://www.typescriptlang.org/)
@@ -12,7 +14,7 @@ Bootstrap a developer-friendly NextJS app configured with:
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/negiseijin/todo-app&project-name=todo-app&repository-name=todo-app)
 
 ## How to use
 
