@@ -5,6 +5,7 @@
   "repository": "https://github.com/negiseijin/todo-app",
   "author": "negiseijin <satoru6221@gmail.com>",
   "license": "UNLICENSED",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +13,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "lint:css": "stylelint **/*.{css,scss,sass}",
+    "lint:css": "stylelint .src/**/*.{css,scss,sass}",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
@@ -58,6 +59,7 @@
     "lint-staged": "^10.0.10",
     "postcss": "^8.2.13",
     "prettier": "^2.2.1",
+    "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-standard": "^22.0.0",
