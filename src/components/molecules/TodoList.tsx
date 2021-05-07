@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { isBefore } from 'date-fns'
-
 import { firestore } from '@/lib/firebase'
 import { Todo } from '@/types/todo'
+
+import { isBefore } from 'date-fns'
+import React, { useEffect, useState } from 'react'
+
 import { TodoItem } from './TodoItem'
 
 type Props = {

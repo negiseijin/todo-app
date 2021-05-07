@@ -1,6 +1,7 @@
-import firebase from 'firebase/app'
-import { createContext, useContext, useEffect, useState } from 'react'
 import { auth } from '@/lib/firebase'
+import firebase from 'firebase/app'
+
+import { createContext, useContext, useEffect, useState } from 'react'
 
 export type User = firebase.User | null
 

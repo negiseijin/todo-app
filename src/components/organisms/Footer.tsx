@@ -1,6 +1,6 @@
-import React from 'react'
-
 import { Copyright } from '@/components/atoms/Copyright'
+
+import React from 'react'
 
 export const Footer: React.VFC = React.memo(() => {
   return (

@@ -1,11 +1,11 @@
+import { useAuth } from '@/lib/authContext'
+import { LockClosedIcon } from '@heroicons/react/solid'
+
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { FormEvent, useCallback, useEffect, useState } from 'react'
-import { LockClosedIcon } from '@heroicons/react/solid'
 import { useForm } from 'react-hook-form'
-
-import { useAuth } from '@/lib/authContext'
 
 type IFormInput = {
   firstName: string

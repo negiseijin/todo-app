@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-
 import { User } from '@/lib/authContext'
+
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import React, { Fragment } from 'react'
 
 type Props = {
   currentUser: User

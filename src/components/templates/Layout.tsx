@@ -1,10 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-
-import { useAuth } from '@/lib/authContext'
+import { Footer } from '@/components/organisms/Footer'
 import { Header } from '@/components/organisms/Header'
 import { Main } from '@/components/organisms/Main'
-import { Footer } from '@/components/organisms/Footer'
+import { useAuth } from '@/lib/authContext'
+
+import { useRouter } from 'next/router'
+import React from 'react'
 
 type Props = {
   children: React.ReactNode

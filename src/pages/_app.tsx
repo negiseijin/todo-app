@@ -1,9 +1,9 @@
-import Head from 'next/head'
+import { AuthProvider, useAuthCtx } from '@/lib/authContext'
+
 import { AppProps } from 'next/app'
+import Head from 'next/head'
 
 import '@/styles/globals.css'
-
-import { useAuthCtx, AuthProvider } from '@/lib/authContext'
 
 const MyApp = (props: AppProps): JSX.Element => {
   const { Component, pageProps } = props

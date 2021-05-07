@@ -1,9 +1,9 @@
+import { Layout } from '@/components/templates/Layout'
+import { useAuth } from '@/lib/authContext'
+
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-
-import { useAuth } from '@/lib/authContext'
-import { Layout } from '@/components/templates/Layout'
 
 export const Home: NextPage = () => {
   const { currentUser } = useAuth()

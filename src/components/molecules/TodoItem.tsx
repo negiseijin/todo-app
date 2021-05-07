@@ -1,3 +1,7 @@
+import { Todo } from '@/types/todo'
+import { Dialog, Transition } from '@headlessui/react'
+
+import { format } from 'date-fns'
 import React, {
   FormEvent,
   useCallback,
@@ -5,12 +9,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
 import { useForm } from 'react-hook-form'
-
-import { format } from 'date-fns'
-
-import { Todo } from '@/types/todo'
 
 type Props = {
   todo: Todo

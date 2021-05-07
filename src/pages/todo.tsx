@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import { NextPage } from 'next'
-
-import { firestore } from '@/lib/firebase'
-import { useAuth } from '@/lib/authContext'
-import { Todo as type } from '@/types/todo'
-import { Layout } from '@/components/templates/Layout'
 import { TodoInput } from '@/components/molecules/TodoInput'
 import { TodoList } from '@/components/molecules/TodoList'
+import { Layout } from '@/components/templates/Layout'
+import { useAuth } from '@/lib/authContext'
+import { firestore } from '@/lib/firebase'
+import { Todo as type } from '@/types/todo'
+
+import { NextPage } from 'next'
+import Head from 'next/head'
 
 const createTodo = async (uid: string, todo: string) => {
   await firestore
